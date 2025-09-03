@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bssjjygu83iwl"]
 
-[ext_resource type="Script" uid="uid://s1fv3w5kaew" path="res://Scripts/AudioManager.gd" id="1_hp1cr"]
+[ext_resource type="Script" uid="uid://chvj0rwojsruk" path="res://Scripts/AudioManager.gd" id="1_hp1cr"]
 
 [sub_resource type="Resource" id="Resource_tyob0"]
 metadata/__load_path__ = "res://Assets/Sound/FX/jump_sfx.sfxr"
