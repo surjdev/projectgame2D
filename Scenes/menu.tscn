@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://rgoa1ofk15jr"]
+[gd_scene load_steps=3 format=3 uid="uid://cpfebb3iwbr2p"]
 
-[ext_resource type="Script" uid="uid://dhhhqgqs0b7ul" path="res://Scripts/menu.gd" id="1_mvsu8"]
-[ext_resource type="Texture2D" uid="uid://xgtmioqcttg5" path="res://bg.jpg" id="2_ju4x4"]
+[ext_resource type="Script" uid="uid://c03x0ebaqnjhh" path="res://Scenes/menu.gd" id="1_1rerr"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7pnm7"]
-diffuse_texture = ExtResource("2_ju4x4")
 
 [node name="menu" type="Node2D"]
-script = ExtResource("1_mvsu8")
+script = ExtResource("1_1rerr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -34,7 +32,7 @@ grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 24
 theme_override_font_sizes/font_size = 48
-text = "Lost in NJZ's aesthetic"
+text = "Darker"
 horizontal_alignment = 1
 vertical_alignment = 1
 
