@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpfebb3iwbr2p"]
 
 [ext_resource type="Script" uid="uid://c03x0ebaqnjhh" path="res://Scenes/menu.gd" id="1_1rerr"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_7pnm7"]
+[ext_resource type="Texture2D" uid="uid://bkcj1bm0dsdhe" path="res://Assets/Png/DestroyCity.png" id="2_xhh6f"]
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_1rerr")
@@ -13,9 +12,13 @@ script = ExtResource("1_1rerr")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -373.0
+offset_top = -182.0
+offset_right = 395.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_7pnm7")
+texture = ExtResource("2_xhh6f")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
