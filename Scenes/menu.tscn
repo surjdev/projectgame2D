@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://rgoa1ofk15jr"]
+
+[ext_resource type="Script" uid="uid://dhhhqgqs0b7ul" path="res://Scripts/menu.gd" id="1_mvsu8"]
+[ext_resource type="Texture2D" uid="uid://xgtmioqcttg5" path="res://bg.jpg" id="2_ju4x4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7pnm7"]
+diffuse_texture = ExtResource("2_ju4x4")
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_mvsu8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_7pnm7")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -110.0
+offset_right = 71.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 48
+text = "Lost in NJZ's aesthetic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.471
+anchor_bottom = 0.471
+offset_left = 459.0
+offset_top = 64.792
+offset_right = 693.0
+offset_bottom = 106.792
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+
+[node name="StartButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -28.0
+offset_right = 117.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Start"
+
+[connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
