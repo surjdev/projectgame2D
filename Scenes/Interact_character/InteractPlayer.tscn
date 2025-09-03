@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bypp48a33q23a"]
+
+[ext_resource type="PackedScene" uid="uid://cs5d010lvgfjc" path="res://Scenes/CharacterTSCN/player.tscn" id="1_7ybk5"]
+[ext_resource type="Script" uid="uid://b12k26uy5ejlt" path="res://Scripts/interact_player.gd" id="1_loa27"]
+[ext_resource type="Texture2D" uid="uid://bwjntqx4uhqsa" path="res://Assets/Tilemap/2d_lights_and_shadows_neutral_point_light-removebg-preview.png" id="3_e1u81"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_loa27"]
+radius = 26.0
+height = 114.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1u81"]
+size = Vector2(53, 113)
+
+[node name="InteractPlayer" type="CharacterBody2D"]
+script = ExtResource("1_loa27")
+
+[node name="Warp" type="Node2D" parent="."]
+
+[node name="Player" parent="Warp" instance=ExtResource("1_7ybk5")]
+position = Vector2(-60, -66)
+scale = Vector2(0.125, 0.125)
+
+[node name="PointLight2D" type="PointLight2D" parent="Warp"]
+position = Vector2(16, -9.05991e-06)
+scale = Vector2(0.570196, 1.57844)
+energy = 0.85
+texture = ExtResource("3_e1u81")
+texture_scale = 0.97
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+shape = SubResource("CapsuleShape2D_loa27")
+
+[node name="collision_signal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision_signal"]
+position = Vector2(1.5, 2.5)
+shape = SubResource("RectangleShape2D_e1u81")

@@ -13,3 +13,11 @@ config_version=5
 config/name="New Game Project"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Player=""
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.681126, 1, 0.93396, 1)
