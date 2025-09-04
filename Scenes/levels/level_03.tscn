@@ -1334,6 +1334,12 @@ scale = Vector2(0.270217, 0.653877)
 texture = ExtResource("2_cq7h4")
 texture_scale = 4.33
 
+[node name="PointLight2D2" type="PointLight2D" parent="Level"]
+position = Vector2(615, 199)
+scale = Vector2(0.270217, 0.653877)
+texture = ExtResource("2_cq7h4")
+texture_scale = 4.33
+
 [node name="Levelfinisher" parent="Level" instance=ExtResource("3_7igg5")]
 position = Vector2(1120, 463)
 
