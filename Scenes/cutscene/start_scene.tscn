@@ -1,0 +1,199 @@
+[gd_scene load_steps=9 format=3 uid="uid://gpcf7v15w3nf"]
+
+[ext_resource type="Script" uid="uid://db32si5gbps7" path="res://Scripts/start_scene.gd" id="1_b0g2x"]
+[ext_resource type="Texture2D" uid="uid://cc0o3w5fp2hro" path="res://Assets/CutsenceAssets/City.png" id="2_j023i"]
+[ext_resource type="Texture2D" uid="uid://cnc61skbppphr" path="res://Assets/CutsenceAssets/bomb.png" id="3_8sghp"]
+[ext_resource type="AudioStream" uid="uid://byr2v1ejuy4hg" path="res://Assets/CutsenceAssets/Bombeffectedit (2).mp3" id="4_67wh3"]
+[ext_resource type="Texture2D" uid="uid://dvdwarqvrw6sy" path="res://Assets/CutsenceAssets/Bombeffect.png" id="5_bcry1"]
+
+[sub_resource type="Animation" id="Animation_0hol4"]
+resource_name = "Bomb"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BombAnimation/Bomb:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.63879, -1.13621]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BombAnimation/Bomb:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1405, 42.9999), Vector2(516, 436)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BombAnimation/Bomb:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.126823, 0.162963), Vector2(0.011, 0.014)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bombeffect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.96667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bombeffect:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2, 2.2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 0.965936),
+"update": 0,
+"values": [Vector2(0.00648147, 0.00648147), Vector2(0.00648147, 0.00648147), Vector2(1.1, 0.7), Vector2(1.5, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BombAnimation/Bomb:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.96667, 2.01),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_q6r6c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BombAnimation/Bomb:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.63879]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BombAnimation/Bomb:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1450, -167)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BombAnimation/Bomb:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.126823, 0.162963)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bombeffect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BombAnimation/Bomb:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bombeffect:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.00648147, 0.00648147)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kdubu"]
+_data = {
+&"Bomb": SubResource("Animation_0hol4"),
+&"RESET": SubResource("Animation_q6r6c")
+}
+
+[node name="Cutsence1" type="Node2D"]
+script = ExtResource("1_b0g2x")
+
+[node name="City" type="Sprite2D" parent="."]
+position = Vector2(576.5, 323.25)
+scale = Vector2(0.603646, 0.605093)
+texture = ExtResource("2_j023i")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(574.175, 322.69)
+
+[node name="BombAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kdubu")
+}
+
+[node name="Bomb" type="Sprite2D" parent="BombAnimation"]
+visible = false
+position = Vector2(1450, -167)
+rotation = -0.63879
+scale = Vector2(0.126823, 0.162963)
+texture = ExtResource("3_8sghp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_67wh3")
+autoplay = true
+
+[node name="Bombeffect" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(545, 301)
+scale = Vector2(0.00648147, 0.00648147)
+texture = ExtResource("5_bcry1")
+
+[connection signal="animation_finished" from="BombAnimation" to="." method="_on_bomb_animation_animation_finished"]

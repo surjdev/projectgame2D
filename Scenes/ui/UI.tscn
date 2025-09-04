@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctsy18omll7lb"]
+[gd_scene load_steps=6 format=3 uid="uid://ctsy18omll7lb"]
 
 [ext_resource type="Script" uid="uid://dwnnnplsvjv1k" path="res://Scripts/ui.gd" id="1_u70sc"]
+[ext_resource type="Script" uid="uid://dge0lvvdwn37x" path="res://Scripts/inventory_ui.gd" id="2_vmyls"]
+[ext_resource type="Texture2D" uid="uid://wuc6j02gpcbd" path="res://Assets/Items/flashlight.png" id="3_4aevp"]
+[ext_resource type="Texture2D" uid="uid://bjm0jvk3ragp0" path="res://Assets/Items/blood_splatter.png" id="3_qf1bp"]
+[ext_resource type="Texture2D" uid="uid://cfbpggx1pa618" path="res://Assets/Items/knife.png" id="4_qf1bp"]
 
 [node name="UI" type="Node2D"]
 script = ExtResource("1_u70sc")
@@ -26,6 +30,8 @@ theme_override_font_sizes/font_size = 24
 text = "Coin  :"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="CoinCollect" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
@@ -46,6 +52,8 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="HealthLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
@@ -66,6 +74,8 @@ theme_override_font_sizes/font_size = 16
 text = "Health :
 "
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
 offset_left = 411.0
@@ -74,3 +84,72 @@ offset_right = 747.0
 offset_bottom = 638.0
 step = -20.0
 value = 100.0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Inventory_UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_vmyls")
+
+[node name="ItemSlots" type="HBoxContainer" parent="Inventory_UI"]
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 40.0
+
+[node name="Flashlight" type="Control" parent="Inventory_UI/ItemSlots"]
+layout_mode = 2
+
+[node name="BloodSplatterFL" type="TextureRect" parent="Inventory_UI/ItemSlots/Flashlight"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 68.0
+offset_bottom = 64.0
+texture = ExtResource("3_qf1bp")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="FlashlightIcon" type="TextureRect" parent="Inventory_UI/ItemSlots/Flashlight"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 1.0
+offset_right = 76.0
+offset_bottom = 80.0
+texture = ExtResource("3_4aevp")
+expand_mode = 1
+flip_h = true
+
+[node name="Knife" type="Control" parent="Inventory_UI/ItemSlots"]
+layout_mode = 2
+
+[node name="BloodSplatterKN" type="TextureRect" parent="Inventory_UI/ItemSlots/Knife"]
+layout_mode = 0
+offset_left = 67.0
+offset_right = 133.0
+offset_bottom = 64.0
+texture = ExtResource("3_qf1bp")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="KnifeIcon" type="TextureRect" parent="Inventory_UI/ItemSlots/Knife"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 8.0
+offset_right = 131.0
+offset_bottom = 70.0
+texture = ExtResource("4_qf1bp")
+expand_mode = 1
+flip_h = true
+flip_v = true
+
+[node name="Key1" type="Control" parent="Inventory_UI/ItemSlots"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Key1Icon" type="TextureRect" parent="Inventory_UI/ItemSlots/Key1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
