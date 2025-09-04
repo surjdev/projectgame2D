@@ -9,6 +9,7 @@ script = ExtResource("1_eeacf")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 0, 0.109804, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
