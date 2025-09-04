@@ -41,7 +41,7 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ExitButton" type="Button" parent="CanvasLayer"]
+[node name="BacktoMenuButton" type="Button" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_top = 0.471
 anchor_bottom = 0.471
@@ -51,9 +51,9 @@ offset_right = 693.0
 offset_bottom = 106.792
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
-text = "Exit"
+text = "Main Menu"
 
-[node name="StartButton" type="Button" parent="CanvasLayer"]
+[node name="RestartButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -73,5 +73,5 @@ stream = ExtResource("3_yvt8p")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BacktoMenuButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="." method="_on_start_button_pressed"]
