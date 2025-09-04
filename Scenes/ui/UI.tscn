@@ -95,6 +95,7 @@ offset_bottom = 40.0
 script = ExtResource("2_vmyls")
 
 [node name="ItemSlots" type="HBoxContainer" parent="Inventory_UI"]
+layout_mode = 0
 offset_right = 228.0
 offset_bottom = 40.0
 
@@ -124,6 +125,7 @@ flip_h = true
 layout_mode = 2
 
 [node name="BloodSplatterKN" type="TextureRect" parent="Inventory_UI/ItemSlots/Knife"]
+layout_mode = 0
 offset_left = 67.0
 offset_right = 133.0
 offset_bottom = 64.0
