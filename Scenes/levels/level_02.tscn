@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://bfuj84c1mv53k"]
+[gd_scene load_steps=11 format=4 uid="uid://bfuj84c1mv53k"]
 
 [ext_resource type="Texture2D" uid="uid://b4vpfcsxgclf3" path="res://Assets/Tilemap/tile_map.png" id="1_g5d10"]
 [ext_resource type="Texture2D" uid="uid://bwjntqx4uhqsa" path="res://Assets/Tilemap/2d_lights_and_shadows_neutral_point_light-removebg-preview.png" id="2_rg40u"]
 [ext_resource type="PackedScene" uid="uid://def47wj6p7gmw" path="res://Scenes/Object/levelfinisher.tscn" id="3_lpkwo"]
 [ext_resource type="PackedScene" uid="uid://qxjl34fywwop" path="res://Scenes/levels/level_03.tscn" id="4_lpkwo"]
 [ext_resource type="PackedScene" uid="uid://bypp48a33q23a" path="res://Scenes/Interact_character/InteractPlayer.tscn" id="4_rg40u"]
+[ext_resource type="PackedScene" uid="uid://c6jl0v46y86wk" path="res://Scenes/Interact_character/ZombieBase.tscn" id="6_20v8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20v8k"]
 texture = ExtResource("1_g5d10")
@@ -1364,3 +1365,6 @@ next_scene = ExtResource("4_lpkwo")
 [node name="Levelfinisher2" parent="." instance=ExtResource("3_lpkwo")]
 position = Vector2(2079, 453)
 next_scene = ExtResource("4_lpkwo")
+
+[node name="ZombieBase" parent="." instance=ExtResource("6_20v8k")]
+position = Vector2(1770, 455)

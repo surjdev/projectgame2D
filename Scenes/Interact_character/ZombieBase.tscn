@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6jl0v46y86wk"]
+
+[ext_resource type="Script" uid="uid://bb7lqr3vjdcav" path="res://Scripts/zombie_base.gd" id="1_s0wby"]
+[ext_resource type="PackedScene" uid="uid://br0wjp2l4tgmv" path="res://Scenes/CharacterTSCN/zombie_1.tscn" id="2_7qkf3"]
+[ext_resource type="PackedScene" uid="uid://cqu3bnxso0rth" path="res://Scenes/CharacterTSCN/zombie_2.tscn" id="3_2n2yb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1m85i"]
+size = Vector2(51, 106.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0wby"]
+radius = 39.0
+height = 112.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1m85i"]
+radius = 33.0
+height = 108.0
+
+[node name="ZombieBase" type="CharacterBody2D"]
+script = ExtResource("1_s0wby")
+visual_scenes = Array[PackedScene]([ExtResource("2_7qkf3"), ExtResource("3_2n2yb")])
+visual_index = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 1.75)
+shape = SubResource("RectangleShape2D_1m85i")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Zombie1" parent="Visuals" instance=ExtResource("2_7qkf3")]
+position = Vector2(-60, -54)
+scale = Vector2(0.125, 0.125)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(5, -1)
+shape = SubResource("CapsuleShape2D_s0wby")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(5, -2)
+shape = SubResource("CapsuleShape2D_1m85i")
+
+[node name="Screen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(7, -23)
+scale = Vector2(5.15, 0.875)
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+[connection signal="screen_entered" from="Screen" to="." method="_on_screen_entered"]
+[connection signal="screen_exited" from="Screen" to="." method="_on_screen_exited"]
