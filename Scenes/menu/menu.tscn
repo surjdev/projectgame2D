@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpfebb3iwbr2p"]
+
+[ext_resource type="Script" uid="uid://c03x0ebaqnjhh" path="res://Scripts/menu.gd" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://bkcj1bm0dsdhe" path="res://Assets/Png/DestroyCity.png" id="2_xhh6f"]
+[ext_resource type="AudioStream" uid="uid://cf78b3bokipa3" path="res://Assets/Sounds/atmosphere/menu2.mp3" id="3_ruglv"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_xhh6f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -373.0
+offset_top = -182.0
+offset_right = 395.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xhh6f")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -110.0
+offset_right = 71.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 48
+text = "Undead Files"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.471
+anchor_bottom = 0.471
+offset_left = 459.0
+offset_top = 64.792
+offset_right = 693.0
+offset_bottom = 106.792
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+
+[node name="StartButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -28.0
+offset_right = 117.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ruglv")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
