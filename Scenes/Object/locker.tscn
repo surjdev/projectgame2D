@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cauhu3hyofgsj"]
+
+[ext_resource type="Texture2D" uid="uid://dcit2p71nimac" path="res://Assets/Tilemap/locker.png" id="1_kxbmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwx4k"]
+size = Vector2(40, 133)
+
+[node name="Locker" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.382075, 0.382075)
+texture = ExtResource("1_kxbmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_kwx4k")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

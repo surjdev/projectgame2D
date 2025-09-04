@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bb7lqr3vjdcav" path="res://Scripts/zombie_base.gd" id="1_s0wby"]
 [ext_resource type="PackedScene" uid="uid://br0wjp2l4tgmv" path="res://Scenes/CharacterTSCN/zombie_1.tscn" id="2_7qkf3"]
-[ext_resource type="PackedScene" uid="uid://cqu3bnxso0rth" path="res://Scenes/CharacterTSCN/zombie_2.tscn" id="3_2n2yb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1m85i"]
-size = Vector2(51, 106.5)
+size = Vector2(95, 107.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0wby"]
 radius = 39.0
@@ -15,13 +14,20 @@ height = 112.0
 radius = 33.0
 height = 108.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkf3"]
+size = Vector2(109, 108)
+
 [node name="ZombieBase" type="CharacterBody2D"]
 script = ExtResource("1_s0wby")
-visual_scenes = Array[PackedScene]([ExtResource("2_7qkf3"), ExtResource("3_2n2yb")])
-visual_index = 0
+patrol_speed = null
+run_speed = null
+chase_range = null
+bite_range = null
+use_gravity = null
+player_path = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 1.75)
+position = Vector2(11.5, 2.25)
 shape = SubResource("RectangleShape2D_1m85i")
 
 [node name="Visuals" type="Node2D" parent="."]
@@ -45,6 +51,12 @@ shape = SubResource("CapsuleShape2D_1m85i")
 [node name="Screen" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(7, -23)
 scale = Vector2(5.15, 0.875)
+
+[node name="Sense" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sense"]
+position = Vector2(11.5, 2)
+shape = SubResource("RectangleShape2D_7qkf3")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
