@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpfebb3iwbr2p"]
+[gd_scene load_steps=4 format=3 uid="uid://cpfebb3iwbr2p"]
 
 [ext_resource type="Script" uid="uid://c03x0ebaqnjhh" path="res://Scripts/menu.gd" id="1_xhh6f"]
 [ext_resource type="Texture2D" uid="uid://bkcj1bm0dsdhe" path="res://Assets/Png/DestroyCity.png" id="2_xhh6f"]
+[ext_resource type="AudioStream" uid="uid://cf78b3bokipa3" path="res://Assets/Sounds/atmosphere/menu2.mp3" id="3_ruglv"]
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_xhh6f")
@@ -65,6 +66,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ruglv")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
