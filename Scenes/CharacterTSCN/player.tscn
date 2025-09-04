@@ -1209,13 +1209,13 @@ rest = Transform2D(1, 0, 0, 1, 535, 607)
 [node name="chest" type="Bone2D" parent="Skeleton2D/hip"]
 position = Vector2(-16, -331)
 rotation = 0.287979
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, -16, -331)
 
 [node name="head" type="Bone2D" parent="Skeleton2D/hip/chest"]
 position = Vector2(30, -89)
 rotation = -0.161922
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.999998, 0.999998)
 rest = Transform2D(1, 0, 0, 1, 30, -89)
 
 [node name="right_shoulder" type="Bone2D" parent="Skeleton2D/hip/chest"]
@@ -1242,6 +1242,7 @@ rest = Transform2D(1, 0, 0, 1, 87, 64)
 [node name="left_arm" type="Bone2D" parent="Skeleton2D/hip/chest/left_shoulder"]
 position = Vector2(30, 116)
 rotation = -0.82205
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 30, 116)
 
 [node name="left_hand" type="Bone2D" parent="Skeleton2D/hip/chest/left_shoulder/left_arm"]
@@ -1256,12 +1257,12 @@ rest = Transform2D(1, 0, 0, 1, -76, 70)
 [node name="right_lowleg" type="Bone2D" parent="Skeleton2D/hip/right_upleg"]
 position = Vector2(24, 115)
 rotation = 1.01578
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 24, 115)
 
 [node name="right_foot" type="Bone2D" parent="Skeleton2D/hip/right_upleg/right_lowleg"]
 position = Vector2(-33, 193)
 rotation = 0.801106
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, -33, 193)
 
 [node name="left_upleg" type="Bone2D" parent="Skeleton2D/hip"]
