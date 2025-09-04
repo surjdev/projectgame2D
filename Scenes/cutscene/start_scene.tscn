@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdllofcmvrg82"]
+[gd_scene load_steps=9 format=3 uid="uid://gpcf7v15w3nf"]
 
-[ext_resource type="Script" uid="uid://db32si5gbps7" path="res://Scenes/node_2d.gd" id="1_tx0tn"]
-[ext_resource type="Texture2D" uid="uid://cc0o3w5fp2hro" path="res://Assets/CutsenceAssets/City.png" id="1_u7krg"]
-[ext_resource type="Texture2D" uid="uid://cnc61skbppphr" path="res://Assets/CutsenceAssets/bomb.png" id="2_tx0tn"]
-[ext_resource type="AudioStream" uid="uid://byr2v1ejuy4hg" path="res://Assets/CutsenceAssets/Bombeffectedit (2).mp3" id="4_v7gqg"]
-[ext_resource type="Texture2D" uid="uid://dvdwarqvrw6sy" path="res://Assets/CutsenceAssets/Bombeffect.png" id="5_chwn1"]
+[ext_resource type="Script" path="res://Scripts/node_2d.gd" id="1_b0g2x"]
+[ext_resource type="Texture2D" uid="uid://cc0o3w5fp2hro" path="res://Assets/CutsenceAssets/City.png" id="2_j023i"]
+[ext_resource type="Texture2D" uid="uid://cnc61skbppphr" path="res://Assets/CutsenceAssets/bomb.png" id="3_8sghp"]
+[ext_resource type="AudioStream" uid="uid://byr2v1ejuy4hg" path="res://Assets/CutsenceAssets/Bombeffectedit (2).mp3" id="4_67wh3"]
+[ext_resource type="Texture2D" uid="uid://dvdwarqvrw6sy" path="res://Assets/CutsenceAssets/Bombeffect.png" id="5_bcry1"]
 
 [sub_resource type="Animation" id="Animation_0hol4"]
 resource_name = "Bomb"
@@ -164,12 +164,12 @@ _data = {
 }
 
 [node name="Cutsence1" type="Node2D"]
-script = ExtResource("1_tx0tn")
+script = ExtResource("1_b0g2x")
 
 [node name="City" type="Sprite2D" parent="."]
 position = Vector2(576.5, 323.25)
 scale = Vector2(0.603646, 0.605093)
-texture = ExtResource("1_u7krg")
+texture = ExtResource("2_j023i")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(574.175, 322.69)
@@ -179,7 +179,7 @@ visible = false
 position = Vector2(1450, -167)
 rotation = -0.63879
 scale = Vector2(0.126823, 0.162963)
-texture = ExtResource("2_tx0tn")
+texture = ExtResource("3_8sghp")
 
 [node name="BombAnimation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -187,11 +187,11 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_v7gqg")
+stream = ExtResource("4_67wh3")
 autoplay = true
 
 [node name="Bombeffect" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(517, 444)
 scale = Vector2(0.00648147, 0.00648147)
-texture = ExtResource("5_chwn1")
+texture = ExtResource("5_bcry1")

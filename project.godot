@@ -11,6 +11,14 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="uid://bdllofcmvrg82"
+run/main_scene="uid://gpcf7v15w3nf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Player=""
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.681126, 1, 0.93396, 1)
