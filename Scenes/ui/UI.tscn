@@ -144,8 +144,10 @@ flip_v = true
 
 [node name="Key1" type="Control" parent="Inventory_UI/ItemSlots"]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="Key1Icon" type="TextureRect" parent="Inventory_UI/ItemSlots/Key1"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_lock_ = true
