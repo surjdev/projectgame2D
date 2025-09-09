@@ -6,5 +6,5 @@ func _ready() -> void:
 func _on_bomb_animation_animation_finished(anim_name: StringName) -> void:
 	# Change the scene to the next level.
 	# Replace "res://levels/level_01.tscn" with your target scene path.
-	var next_scene = load("res://Scenes/levels/level_01.tscn")
+	var next_scene = load("res://Scenes/levels/level_02.tscn")
 	SceneTransition.load_scene(next_scene)

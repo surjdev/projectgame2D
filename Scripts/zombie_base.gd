@@ -1,17 +1,19 @@
 extends CharacterBody2D
+# ซอมบี้เดินสุ่ม-หยุด และหัน/ไล่ผู้เล่นเมื่อเข้ารัศมี Sense (Godot 4.x)
 
-# --- ปรับได้จาก Inspector ---
-@export var walk_speed: float = 50.0     # ความเร็วเดินปกติ (wander)
-@export var chase_speed: float = 90.0    # ความเร็วตอนไล่ (ถ้าเปิดสวิตช์)
-@export var walk_time: Vector2 = Vector2(1.2, 2.5) # ช่วงเวลาเดินแบบสุ่ม
-@export var stop_time: Vector2 = Vector2(0.5, 1.2) # ช่วงเวลาหยุดแบบสุ่ม
-@export var chase_when_seen: bool = false          # true = ไล่เมื่อเห็น / false = แค่มอง
+# ==== ปรับจาก Inspector ====
+@export var walk_speed: float = 50.0              # ความเร็วเดินปกติ (wander)
+@export var chase_speed: float = 90.0             # ความเร็วตอนไล่
+@export var walk_time: Vector2 = Vector2(1.2, 2.5) # ระยะเวลาเดินแบบสุ่ม
+@export var stop_time: Vector2 = Vector2(0.5, 1.2) # ระยะเวลาหยุดแบบสุ่ม
+@export var chase_when_seen: bool = false          # true=ไล่ทันทีที่เห็น / false=เพียงแค่มอง
 
-# --- โหนดที่อ้างอิง (ตามชื่อ/โครงสร้างของคุณ) ---
+# ==== Node refs ====
 @onready var visuals: Node2D = $Visuals
 @onready var ap_walk: AnimationPlayer = $Visuals/Zombie1/WalkingZombie1
 @onready var sense: Area2D = $Sense
 
+# ==== Runtime ====
 var base_scale: Vector2 = Vector2.ONE
 var player: Node2D = null
 var see_player: bool = false
@@ -27,14 +29,14 @@ func _ready() -> void:
 	if sense:
 		sense.body_entered.connect(_on_sense_entered)
 		sense.body_exited.connect(_on_sense_exited)
-	# หา player จาก group ถ้ามีอยู่แล้วในฉาก
+	# หา player จาก group "player"
 	player = get_tree().get_first_node_in_group("player") as Node2D
 	_set_next_state("idle")
 
 func _physics_process(delta: float) -> void:
 	if see_player and player and is_instance_valid(player):
 		var dx: float = player.global_position.x - global_position.x
-		var dir: int = (dx < 0.0) ? -1 : 1
+		var dir: int = (-1 if dx < 0.0 else 1)
 		_face(dir)
 		if chase_when_seen:
 			velocity.x = float(dir) * chase_speed
@@ -46,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		# เดิน/หยุดแบบสุ่ม
 		state_timer -= delta
 		if state_timer <= 0.0:
-			_set_next_state(state == "idle" ? "walk" : "idle")
+			_set_next_state("walk" if state == "idle" else "idle")
 
 		if state == "walk":
 			velocity.x = float(walk_dir) * walk_speed
@@ -62,7 +64,7 @@ func _physics_process(delta: float) -> void:
 func _set_next_state(next: String) -> void:
 	state = next
 	if state == "walk":
-		walk_dir = (randi() % 2 == 0) ? -1 : 1
+		walk_dir = (-1 if (randi() % 2 == 0) else 1)
 		state_timer = randf_range(walk_time.x, walk_time.y)
 	else:
 		state_timer = randf_range(stop_time.x, stop_time.y)
@@ -86,7 +88,7 @@ func _face(dir: int) -> void:
 func _on_sense_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		see_player = true
-		player = body as Node2D  # เผื่อยังไม่ได้อ้างไว้
+		player = body as Node2D
 
 func _on_sense_exited(body: Node) -> void:
 	if body == player:
